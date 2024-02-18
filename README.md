@@ -18,4 +18,6 @@ Detta projekt är utvecklat för att visa vaccinationsgraden i Östersund. Det t
 
 ![image](https://github.com/moma97/InteractiveWebsiteCovidVaccine/assets/117289081/352266c1-dc99-45de-a7d4-7be447837232)
 
+![image](https://github.com/moma97/InteractiveWebsiteCovidVaccine/assets/117289081/622aa97a-c947-4231-aa6a-8d60958e2467)
+
 
