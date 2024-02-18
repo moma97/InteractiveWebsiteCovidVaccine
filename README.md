@@ -1,6 +1,6 @@
 # Östersunds Vaccinationsgrad
 
-Detta projekt är utvecklat för att visa vaccinationsgraden i Östersund. Det tillhandahåller olika funktioner för att visualisera och filtrera data för att få insikt i vaccinationsgraden.
+Detta projekt är utvecklat för att visa vaccinationsgraden i Östersund. Det tillhandahåller olika funktioner för att visualisera och filtrera data för att få insikt i vaccinationsgraden. Data är hämtat från ett API.
 
 ## Funktioner
 
