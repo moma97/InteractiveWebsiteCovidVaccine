@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DSU_Grupp3</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DSU_Grupp3.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="sidebar" id="navbar">
+        <h3 class="logo"><a href="@Url.Action("Index", "Home")">Vaccinationsstatistik Östersund</a></h3>
+        <ul>
+            <li><a href="@Url.Action("Index", "Home")">Översikt</a></li>
+            <li><a href="@Url.Action("AdditionalStatistics", "AgeAndGender")">Ålder och könsstatistik</a></li>
+            <li><a href="@Url.Action("DetailStatistics", "DetailStatistics")">Övrig statistik</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2024 - DSU_Grupp3 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var currentPage = window.location.pathname;
+            var currentNavLink = document.querySelector('#navbar ul li a[href="' + currentPage + '"]');
+            
+            if (currentNavLink) {
+                currentNavLink.classList.add("current-page");
+            }
+        });
+</script>
+</body>
+</html>

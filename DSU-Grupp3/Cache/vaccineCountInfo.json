@@ -1,0 +1,1419 @@
+{
+  "Data": {
+    "meta": {
+      "latest-changes": [
+        {
+          "Deso": "2380C1310",
+          "latest-change": "2024-02-09T08:47:25Z"
+        },
+        {
+          "Deso": "2380C1020",
+          "latest-change": "2024-02-13T15:35:28Z"
+        },
+        {
+          "Deso": "2380C1200",
+          "latest-change": "2024-02-13T07:35:24Z"
+        },
+        {
+          "Deso": "2380C1050",
+          "latest-change": "2024-02-13T20:34:50Z"
+        },
+        {
+          "Deso": "2380C1030",
+          "latest-change": "2024-02-13T13:02:16Z"
+        },
+        {
+          "Deso": "2380C1110",
+          "latest-change": "2024-02-14T06:41:41Z"
+        },
+        {
+          "Deso": "2380C1090",
+          "latest-change": "2024-02-14T09:00:52Z"
+        },
+        {
+          "Deso": "2380C1070",
+          "latest-change": "2024-02-09T08:16:30Z"
+        },
+        {
+          "Deso": "2380A0030",
+          "latest-change": "2024-02-14T08:58:56Z"
+        },
+        {
+          "Deso": "2380C1210",
+          "latest-change": "2024-02-14T06:41:23Z"
+        },
+        {
+          "Deso": "2380C1230",
+          "latest-change": "2024-02-14T06:41:32Z"
+        },
+        {
+          "Deso": "2380C1190",
+          "latest-change": "2024-02-06T09:46:42Z"
+        },
+        {
+          "Deso": "2380A0050",
+          "latest-change": "2024-02-13T15:30:44Z"
+        },
+        {
+          "Deso": "2380B2010",
+          "latest-change": "2024-02-13T12:52:40Z"
+        },
+        {
+          "Deso": "2380C1150",
+          "latest-change": "2024-02-13T12:33:50Z"
+        },
+        {
+          "Deso": "2380C1160",
+          "latest-change": "2024-02-13T20:34:31Z"
+        },
+        {
+          "Deso": "2380C1280",
+          "latest-change": "2024-02-12T08:00:09Z"
+        },
+        {
+          "Deso": "2380C1080",
+          "latest-change": "2024-02-14T06:40:55Z"
+        },
+        {
+          "Deso": "2380C1100",
+          "latest-change": "2024-02-13T15:38:02Z"
+        },
+        {
+          "Deso": "2380A0010",
+          "latest-change": "2024-02-13T07:35:58Z"
+        },
+        {
+          "Deso": "2380A0040",
+          "latest-change": "2024-02-13T15:30:18Z"
+        },
+        {
+          "Deso": "2380A0020",
+          "latest-change": "2024-02-11T19:38:23Z"
+        },
+        {
+          "Deso": "2380C1240",
+          "latest-change": "2024-02-12T12:46:12Z"
+        },
+        {
+          "Deso": "2380C1180",
+          "latest-change": "2024-02-13T13:01:41Z"
+        },
+        {
+          "Deso": "2380C1290",
+          "latest-change": "2024-02-08T07:22:36Z"
+        },
+        {
+          "Deso": "2380C1270",
+          "latest-change": "2024-02-07T12:20:43Z"
+        },
+        {
+          "Deso": "2380C1040",
+          "latest-change": "2024-02-13T07:35:01Z"
+        },
+        {
+          "Deso": "2380C1260",
+          "latest-change": "2024-02-14T06:41:13Z"
+        },
+        {
+          "Deso": "2380C1130",
+          "latest-change": "2024-02-13T13:03:13Z"
+        },
+        {
+          "Deso": "2380C1300",
+          "latest-change": "2024-02-12T12:46:23Z"
+        },
+        {
+          "Deso": "2380C1250",
+          "latest-change": "2024-02-13T13:01:23Z"
+        },
+        {
+          "Deso": "2380C1060",
+          "latest-change": "2024-02-14T06:41:46Z"
+        },
+        {
+          "Deso": "2380C1010",
+          "latest-change": "2024-02-13T12:56:01Z"
+        },
+        {
+          "Deso": "2380C1170",
+          "latest-change": "2024-02-14T09:01:48Z"
+        },
+        {
+          "Deso": "2380C1220",
+          "latest-change": "2024-02-12T12:45:12Z"
+        },
+        {
+          "Deso": "2380C1140",
+          "latest-change": "2024-02-13T13:02:27Z"
+        },
+        {
+          "Deso": "2380C1120",
+          "latest-change": "2024-02-09T08:44:11Z"
+        }
+      ]
+    },
+    "data": [
+      {
+        "Deso": "2380A0010",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1656
+          },
+          {
+            "dose-number": 2,
+            "Count": 1305
+          },
+          {
+            "dose-number": 3,
+            "Count": 768
+          },
+          {
+            "dose-number": 4,
+            "Count": 660
+          },
+          {
+            "dose-number": 5,
+            "Count": 463
+          },
+          {
+            "dose-number": 6,
+            "Count": 152
+          },
+          {
+            "dose-number": 7,
+            "Count": 6
+          },
+          {
+            "dose-number": 8,
+            "Count": 1
+          },
+          {
+            "dose-number": 9,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380A0020",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1046
+          },
+          {
+            "dose-number": 2,
+            "Count": 806
+          },
+          {
+            "dose-number": 3,
+            "Count": 475
+          },
+          {
+            "dose-number": 4,
+            "Count": 418
+          },
+          {
+            "dose-number": 5,
+            "Count": 311
+          },
+          {
+            "dose-number": 6,
+            "Count": 84
+          },
+          {
+            "dose-number": 7,
+            "Count": 5
+          }
+        ]
+      },
+      {
+        "Deso": "2380A0030",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 947
+          },
+          {
+            "dose-number": 2,
+            "Count": 738
+          },
+          {
+            "dose-number": 3,
+            "Count": 421
+          },
+          {
+            "dose-number": 4,
+            "Count": 363
+          },
+          {
+            "dose-number": 5,
+            "Count": 266
+          },
+          {
+            "dose-number": 6,
+            "Count": 92
+          },
+          {
+            "dose-number": 7,
+            "Count": 5
+          }
+        ]
+      },
+      {
+        "Deso": "2380A0040",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1648
+          },
+          {
+            "dose-number": 2,
+            "Count": 1312
+          },
+          {
+            "dose-number": 3,
+            "Count": 755
+          },
+          {
+            "dose-number": 4,
+            "Count": 641
+          },
+          {
+            "dose-number": 5,
+            "Count": 448
+          },
+          {
+            "dose-number": 6,
+            "Count": 148
+          },
+          {
+            "dose-number": 7,
+            "Count": 5
+          },
+          {
+            "dose-number": 8,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380A0050",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 815
+          },
+          {
+            "dose-number": 2,
+            "Count": 630
+          },
+          {
+            "dose-number": 3,
+            "Count": 373
+          },
+          {
+            "dose-number": 4,
+            "Count": 319
+          },
+          {
+            "dose-number": 5,
+            "Count": 224
+          },
+          {
+            "dose-number": 6,
+            "Count": 62
+          },
+          {
+            "dose-number": 7,
+            "Count": 4
+          }
+        ]
+      },
+      {
+        "Deso": "2380B2010",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 859
+          },
+          {
+            "dose-number": 2,
+            "Count": 681
+          },
+          {
+            "dose-number": 3,
+            "Count": 408
+          },
+          {
+            "dose-number": 4,
+            "Count": 339
+          },
+          {
+            "dose-number": 5,
+            "Count": 237
+          },
+          {
+            "dose-number": 6,
+            "Count": 69
+          },
+          {
+            "dose-number": 7,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1010",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1228
+          },
+          {
+            "dose-number": 2,
+            "Count": 950
+          },
+          {
+            "dose-number": 3,
+            "Count": 543
+          },
+          {
+            "dose-number": 4,
+            "Count": 460
+          },
+          {
+            "dose-number": 5,
+            "Count": 330
+          },
+          {
+            "dose-number": 6,
+            "Count": 99
+          },
+          {
+            "dose-number": 7,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1020",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 837
+          },
+          {
+            "dose-number": 2,
+            "Count": 681
+          },
+          {
+            "dose-number": 3,
+            "Count": 423
+          },
+          {
+            "dose-number": 4,
+            "Count": 340
+          },
+          {
+            "dose-number": 5,
+            "Count": 230
+          },
+          {
+            "dose-number": 6,
+            "Count": 68
+          },
+          {
+            "dose-number": 7,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1030",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1008
+          },
+          {
+            "dose-number": 2,
+            "Count": 799
+          },
+          {
+            "dose-number": 3,
+            "Count": 456
+          },
+          {
+            "dose-number": 4,
+            "Count": 386
+          },
+          {
+            "dose-number": 5,
+            "Count": 273
+          },
+          {
+            "dose-number": 6,
+            "Count": 67
+          },
+          {
+            "dose-number": 7,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1040",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1727
+          },
+          {
+            "dose-number": 2,
+            "Count": 1268
+          },
+          {
+            "dose-number": 3,
+            "Count": 729
+          },
+          {
+            "dose-number": 4,
+            "Count": 623
+          },
+          {
+            "dose-number": 5,
+            "Count": 451
+          },
+          {
+            "dose-number": 6,
+            "Count": 138
+          },
+          {
+            "dose-number": 7,
+            "Count": 4
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1050",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1443
+          },
+          {
+            "dose-number": 2,
+            "Count": 1141
+          },
+          {
+            "dose-number": 3,
+            "Count": 641
+          },
+          {
+            "dose-number": 4,
+            "Count": 546
+          },
+          {
+            "dose-number": 5,
+            "Count": 412
+          },
+          {
+            "dose-number": 6,
+            "Count": 104
+          },
+          {
+            "dose-number": 7,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1060",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1564
+          },
+          {
+            "dose-number": 2,
+            "Count": 1194
+          },
+          {
+            "dose-number": 3,
+            "Count": 677
+          },
+          {
+            "dose-number": 4,
+            "Count": 577
+          },
+          {
+            "dose-number": 5,
+            "Count": 406
+          },
+          {
+            "dose-number": 6,
+            "Count": 129
+          },
+          {
+            "dose-number": 7,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1070",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 628
+          },
+          {
+            "dose-number": 2,
+            "Count": 478
+          },
+          {
+            "dose-number": 3,
+            "Count": 264
+          },
+          {
+            "dose-number": 4,
+            "Count": 225
+          },
+          {
+            "dose-number": 5,
+            "Count": 157
+          },
+          {
+            "dose-number": 6,
+            "Count": 47
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1080",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1277
+          },
+          {
+            "dose-number": 2,
+            "Count": 1035
+          },
+          {
+            "dose-number": 3,
+            "Count": 624
+          },
+          {
+            "dose-number": 4,
+            "Count": 514
+          },
+          {
+            "dose-number": 5,
+            "Count": 341
+          },
+          {
+            "dose-number": 6,
+            "Count": 100
+          },
+          {
+            "dose-number": 7,
+            "Count": 4
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1090",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1246
+          },
+          {
+            "dose-number": 2,
+            "Count": 927
+          },
+          {
+            "dose-number": 3,
+            "Count": 565
+          },
+          {
+            "dose-number": 4,
+            "Count": 484
+          },
+          {
+            "dose-number": 5,
+            "Count": 339
+          },
+          {
+            "dose-number": 6,
+            "Count": 104
+          },
+          {
+            "dose-number": 7,
+            "Count": 4
+          },
+          {
+            "dose-number": 8,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1100",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1474
+          },
+          {
+            "dose-number": 2,
+            "Count": 1075
+          },
+          {
+            "dose-number": 3,
+            "Count": 603
+          },
+          {
+            "dose-number": 4,
+            "Count": 516
+          },
+          {
+            "dose-number": 5,
+            "Count": 355
+          },
+          {
+            "dose-number": 6,
+            "Count": 106
+          },
+          {
+            "dose-number": 7,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1110",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1136
+          },
+          {
+            "dose-number": 2,
+            "Count": 892
+          },
+          {
+            "dose-number": 3,
+            "Count": 507
+          },
+          {
+            "dose-number": 4,
+            "Count": 414
+          },
+          {
+            "dose-number": 5,
+            "Count": 299
+          },
+          {
+            "dose-number": 6,
+            "Count": 96
+          },
+          {
+            "dose-number": 7,
+            "Count": 5
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1120",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1304
+          },
+          {
+            "dose-number": 2,
+            "Count": 991
+          },
+          {
+            "dose-number": 3,
+            "Count": 586
+          },
+          {
+            "dose-number": 4,
+            "Count": 507
+          },
+          {
+            "dose-number": 5,
+            "Count": 363
+          },
+          {
+            "dose-number": 6,
+            "Count": 107
+          },
+          {
+            "dose-number": 7,
+            "Count": 5
+          },
+          {
+            "dose-number": 8,
+            "Count": 1
+          },
+          {
+            "dose-number": 9,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1130",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1056
+          },
+          {
+            "dose-number": 2,
+            "Count": 745
+          },
+          {
+            "dose-number": 3,
+            "Count": 427
+          },
+          {
+            "dose-number": 4,
+            "Count": 365
+          },
+          {
+            "dose-number": 5,
+            "Count": 256
+          },
+          {
+            "dose-number": 6,
+            "Count": 74
+          },
+          {
+            "dose-number": 7,
+            "Count": 2
+          },
+          {
+            "dose-number": 8,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1140",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1748
+          },
+          {
+            "dose-number": 2,
+            "Count": 1290
+          },
+          {
+            "dose-number": 3,
+            "Count": 786
+          },
+          {
+            "dose-number": 4,
+            "Count": 661
+          },
+          {
+            "dose-number": 5,
+            "Count": 467
+          },
+          {
+            "dose-number": 6,
+            "Count": 158
+          },
+          {
+            "dose-number": 7,
+            "Count": 5
+          },
+          {
+            "dose-number": 8,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1150",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1093
+          },
+          {
+            "dose-number": 2,
+            "Count": 826
+          },
+          {
+            "dose-number": 3,
+            "Count": 474
+          },
+          {
+            "dose-number": 4,
+            "Count": 387
+          },
+          {
+            "dose-number": 5,
+            "Count": 281
+          },
+          {
+            "dose-number": 6,
+            "Count": 86
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1160",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1209
+          },
+          {
+            "dose-number": 2,
+            "Count": 829
+          },
+          {
+            "dose-number": 3,
+            "Count": 487
+          },
+          {
+            "dose-number": 4,
+            "Count": 411
+          },
+          {
+            "dose-number": 5,
+            "Count": 284
+          },
+          {
+            "dose-number": 6,
+            "Count": 83
+          },
+          {
+            "dose-number": 7,
+            "Count": 4
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1170",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1404
+          },
+          {
+            "dose-number": 2,
+            "Count": 1005
+          },
+          {
+            "dose-number": 3,
+            "Count": 602
+          },
+          {
+            "dose-number": 4,
+            "Count": 512
+          },
+          {
+            "dose-number": 5,
+            "Count": 359
+          },
+          {
+            "dose-number": 6,
+            "Count": 107
+          },
+          {
+            "dose-number": 7,
+            "Count": 8
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1180",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1582
+          },
+          {
+            "dose-number": 2,
+            "Count": 1228
+          },
+          {
+            "dose-number": 3,
+            "Count": 717
+          },
+          {
+            "dose-number": 4,
+            "Count": 618
+          },
+          {
+            "dose-number": 5,
+            "Count": 447
+          },
+          {
+            "dose-number": 6,
+            "Count": 142
+          },
+          {
+            "dose-number": 7,
+            "Count": 2
+          },
+          {
+            "dose-number": 8,
+            "Count": 1
+          },
+          {
+            "dose-number": 9,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1190",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1082
+          },
+          {
+            "dose-number": 2,
+            "Count": 809
+          },
+          {
+            "dose-number": 3,
+            "Count": 476
+          },
+          {
+            "dose-number": 4,
+            "Count": 401
+          },
+          {
+            "dose-number": 5,
+            "Count": 286
+          },
+          {
+            "dose-number": 6,
+            "Count": 87
+          },
+          {
+            "dose-number": 7,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1200",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1202
+          },
+          {
+            "dose-number": 2,
+            "Count": 837
+          },
+          {
+            "dose-number": 3,
+            "Count": 497
+          },
+          {
+            "dose-number": 4,
+            "Count": 410
+          },
+          {
+            "dose-number": 5,
+            "Count": 283
+          },
+          {
+            "dose-number": 6,
+            "Count": 87
+          },
+          {
+            "dose-number": 7,
+            "Count": 4
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1210",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1143
+          },
+          {
+            "dose-number": 2,
+            "Count": 898
+          },
+          {
+            "dose-number": 3,
+            "Count": 516
+          },
+          {
+            "dose-number": 4,
+            "Count": 433
+          },
+          {
+            "dose-number": 5,
+            "Count": 305
+          },
+          {
+            "dose-number": 6,
+            "Count": 91
+          },
+          {
+            "dose-number": 7,
+            "Count": 3
+          },
+          {
+            "dose-number": 8,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1220",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1020
+          },
+          {
+            "dose-number": 2,
+            "Count": 765
+          },
+          {
+            "dose-number": 3,
+            "Count": 426
+          },
+          {
+            "dose-number": 4,
+            "Count": 346
+          },
+          {
+            "dose-number": 5,
+            "Count": 260
+          },
+          {
+            "dose-number": 6,
+            "Count": 84
+          },
+          {
+            "dose-number": 7,
+            "Count": 1
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1230",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 956
+          },
+          {
+            "dose-number": 2,
+            "Count": 720
+          },
+          {
+            "dose-number": 3,
+            "Count": 420
+          },
+          {
+            "dose-number": 4,
+            "Count": 351
+          },
+          {
+            "dose-number": 5,
+            "Count": 233
+          },
+          {
+            "dose-number": 6,
+            "Count": 78
+          },
+          {
+            "dose-number": 7,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1240",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1029
+          },
+          {
+            "dose-number": 2,
+            "Count": 827
+          },
+          {
+            "dose-number": 3,
+            "Count": 468
+          },
+          {
+            "dose-number": 4,
+            "Count": 401
+          },
+          {
+            "dose-number": 5,
+            "Count": 280
+          },
+          {
+            "dose-number": 6,
+            "Count": 95
+          },
+          {
+            "dose-number": 7,
+            "Count": 5
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1250",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 976
+          },
+          {
+            "dose-number": 2,
+            "Count": 755
+          },
+          {
+            "dose-number": 3,
+            "Count": 438
+          },
+          {
+            "dose-number": 4,
+            "Count": 359
+          },
+          {
+            "dose-number": 5,
+            "Count": 264
+          },
+          {
+            "dose-number": 6,
+            "Count": 79
+          },
+          {
+            "dose-number": 7,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1260",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1280
+          },
+          {
+            "dose-number": 2,
+            "Count": 995
+          },
+          {
+            "dose-number": 3,
+            "Count": 590
+          },
+          {
+            "dose-number": 4,
+            "Count": 490
+          },
+          {
+            "dose-number": 5,
+            "Count": 341
+          },
+          {
+            "dose-number": 6,
+            "Count": 107
+          },
+          {
+            "dose-number": 7,
+            "Count": 3
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1270",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1635
+          },
+          {
+            "dose-number": 2,
+            "Count": 1210
+          },
+          {
+            "dose-number": 3,
+            "Count": 709
+          },
+          {
+            "dose-number": 4,
+            "Count": 584
+          },
+          {
+            "dose-number": 5,
+            "Count": 405
+          },
+          {
+            "dose-number": 6,
+            "Count": 128
+          },
+          {
+            "dose-number": 7,
+            "Count": 5
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1280",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1079
+          },
+          {
+            "dose-number": 2,
+            "Count": 783
+          },
+          {
+            "dose-number": 3,
+            "Count": 449
+          },
+          {
+            "dose-number": 4,
+            "Count": 370
+          },
+          {
+            "dose-number": 5,
+            "Count": 267
+          },
+          {
+            "dose-number": 6,
+            "Count": 69
+          },
+          {
+            "dose-number": 7,
+            "Count": 2
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1290",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 2101
+          },
+          {
+            "dose-number": 2,
+            "Count": 1546
+          },
+          {
+            "dose-number": 3,
+            "Count": 923
+          },
+          {
+            "dose-number": 4,
+            "Count": 777
+          },
+          {
+            "dose-number": 5,
+            "Count": 555
+          },
+          {
+            "dose-number": 6,
+            "Count": 162
+          },
+          {
+            "dose-number": 7,
+            "Count": 9
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1300",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 1211
+          },
+          {
+            "dose-number": 2,
+            "Count": 922
+          },
+          {
+            "dose-number": 3,
+            "Count": 532
+          },
+          {
+            "dose-number": 4,
+            "Count": 444
+          },
+          {
+            "dose-number": 5,
+            "Count": 314
+          },
+          {
+            "dose-number": 6,
+            "Count": 95
+          },
+          {
+            "dose-number": 7,
+            "Count": 7
+          }
+        ]
+      },
+      {
+        "Deso": "2380C1310",
+        "data": [
+          {
+            "dose-number": 1,
+            "Count": 923
+          },
+          {
+            "dose-number": 2,
+            "Count": 722
+          },
+          {
+            "dose-number": 3,
+            "Count": 418
+          },
+          {
+            "dose-number": 4,
+            "Count": 356
+          },
+          {
+            "dose-number": 5,
+            "Count": 264
+          },
+          {
+            "dose-number": 6,
+            "Count": 69
+          },
+          {
+            "dose-number": 7,
+            "Count": 3
+          }
+        ]
+      }
+    ]
+  },
+  "DataList": null,
+  "Response": null,
+  "ErrorMessage": null,
+  "StatusCode": 0
+}

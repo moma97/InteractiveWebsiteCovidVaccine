@@ -1,0 +1,33 @@
+{
+  "Columns": [
+    {
+      "Code": "Region",
+      "Text": "region",
+      "Comment": null,
+      "Type": "d"
+    },
+    {
+      "Code": "Tid",
+      "Text": "år",
+      "Comment": null,
+      "Type": "t"
+    },
+    {
+      "Code": "BE0101A9",
+      "Text": "Folkmängden den 1 november",
+      "Comment": null,
+      "Type": "c"
+    }
+  ],
+  "Data": [
+    {
+      "Key": [
+        "2380",
+        "2022"
+      ],
+      "Values": [
+        "64642"
+      ]
+    }
+  ]
+}

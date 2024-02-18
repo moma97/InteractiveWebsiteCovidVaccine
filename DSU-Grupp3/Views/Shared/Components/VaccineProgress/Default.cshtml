@@ -1,0 +1,209 @@
+﻿@model DSU_Grupp3.Models.Viewmodels.VaccineProgressViewModel
+
+
+<div>
+    <canvas id="lineChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script type="text/javascript">
+
+</script>
+
+
+<script>
+    var vaccinatedPeoplePerYearKeys = @Html.Raw(Json.Serialize(Model.VaccinatedPeopleByYear.Keys));
+    var vaccinatedPeoplePerYearValues = @Html.Raw(Json.Serialize(Model.VaccinatedPeopleByYear.Values));
+    var selectedDesoKeys = @Html.Raw(Json.Serialize(Model.SelectedDeso.Keys));
+    var selectedDesoValues = @Html.Raw(Json.Serialize(Model.SelectedDeso.Values));
+    var allVaccinatedPeople = @Html.Raw(Json.Serialize(Model.AllVaccinatedPeople));
+    
+    
+</script>
+
+<script>
+
+        var labels = [
+                @foreach (var year in Model.VaccinatedPeopleByYear.Keys)
+                {
+                    foreach (var month in Model.VaccinatedPeopleByYear[year].Keys)                   
+                        {
+                            var monthWithZero = month.ToString("00");
+                            @Html.Raw($"'{year}-{monthWithZero}',")  ;             
+                        }               
+                }
+        ];
+
+
+    
+ 
+    var lineChart;
+
+    function CreateVaccineProgressChart() {
+
+        DestroyLineChart()
+        
+        const line = document.getElementById('lineChart').getContext('2d');
+
+        lineChart = new Chart(line, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Vaccinations grad',
+                    data: @Html.Raw(Json.Serialize(Model.ArrayOfPercent)),
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    fill: false,
+                    backgroundColor: '#FFC2E0',
+                    borderColor: '#FFC2E0',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                var label = context.dataset.label;
+                                var value = context.raw;
+
+                                return label + ': ' + value + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+
+                        ticks: {
+                            callback: function (value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+
+        });
+        
+    }
+
+    function CreateChartSingleDeso(response) {
+
+        let singleDesoLabels = [
+            @foreach (var year in Model.VaccinatedPeopleByYearInDeso.Keys)
+            {
+                foreach (var month in Model.VaccinatedPeopleByYearInDeso[year].Keys)                   
+                {
+                        var monthWithZero = month.ToString("00");
+                        @Html.Raw($"'{year}-{monthWithZero}',");
+
+                }                                          
+            }
+
+        ];
+
+
+
+        const line = document.getElementById('lineChart').getContext('2d');
+       
+        lineChart = new Chart(line, {
+            type: 'line',
+            data: {
+                labels:  singleDesoLabels,
+                datasets: [{
+                    label: 'Vaccinations grad',
+                    data: response.model.arrayOfPercent,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    fill: false,
+                    backgroundColor: '#FFC2E0',
+                    borderColor: '#FFC2E0',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                var label = context.dataset.label;
+                                var value = context.raw;
+
+                                return label + ': ' + value + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+
+                        ticks: {
+                            callback: function (value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+
+        });
+    }
+
+    CreateVaccineProgressChart();
+
+    function GetDataForDeso() {
+
+        DestroyLineChart()
+
+        let dropDown = document.getElementById("desoGraphFilter");
+        let selectedDeso = null;
+        
+
+
+        for (var i = 0; i < dropDown.options.length; i++) {
+            if (dropDown.options[i].selected) {
+                selectedDeso = dropDown.options[i].value;
+              console.log(selectedDeso)
+                break;
+            }
+        }
+ 
+       
+        $.ajax({
+            url: '/DetailStatistics/YourAction',          
+            type: 'POST',
+            data: { chosenDesoCode: selectedDeso },
+            success: function (response) {
+                console.log(response);
+                CreateChartSingleDeso(response);
+             
+            }
+        });
+
+
+    }
+
+    function DestroyLineChart() {
+        if (lineChart) {
+            lineChart.destroy();
+        }
+    }
+   
+</script>
+
+       
+
+
+

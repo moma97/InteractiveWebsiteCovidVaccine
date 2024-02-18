@@ -1,0 +1,91 @@
+@model DSU_Grupp3.Models.DesoDiagramViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="headline">
+    <h1>Vaccinationsstatistik i Östersund kommun</h1>
+</div>
+
+<div class="general-stats">
+    <div class="number-of-vaccinated">
+        <h2>Antal vaccinerade</h2>
+        <h1 class="number" id="numberOfVaccinated"></h1>
+    </div>
+    <div class="percent-vaccinated">
+        <h2>Procentuellt vaccinerade</h2>
+        <h1 class="precent" id="percent-vaccinated"></h1>
+    </div>
+    <div class="number-of-doses">
+        <h2>Antal vaccinationsdoser</h2>
+        <h1 class="doses" id="numberOfDoses"> </h1>
+    </div>
+</div>
+
+<div class="deso-diagram">
+    <h4>Välj DeSO att jämföra:</h4>
+    <p>(Håll in ctrl för att välja flera alternativ)</p>
+    <div id="desoNames">
+        <select id="desoFilter" multiple>
+            @foreach (var desoName in Model.SelectedDesos.Keys)
+            {
+                <option value="@desoName">@desoName</option>
+            }
+        </select>
+        <div class="deso-buttons">
+            <button class="filter-button" onclick="CompareDesos()">Jämför</button>
+            <button class="reset-button" id="reset" onclick="CreateAndUpdateDesoChart()">Tillbaka till start</button>
+        </div>
+    </div>
+    <h2 id="desoHeader">Antal vaccinerade utifrån områdeskategorier</h2>
+    <div>@await Component.InvokeAsync("DesoDiagram")</div>
+    <h3 id="click-text-deso">ⓘ Tryck på en områdeskategori för att se mer detaljerad statistik</h3>
+</div>
+
+
+<div class="map-diagram">
+    <h2>Heatmap över vaccinationsgrad i Östersunds kommun</h2>
+    <div> @await Component.InvokeAsync("Maps")</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetchTotalVaccineDoses();
+        fetchTotalVaccinatedPeople();
+        fetchTotalPopulationVaccinatedInPercentage();
+	});
+
+
+    
+    function fetchTotalVaccineDoses() {
+        fetch('/VaccinationStats/GetTotalVaccineDoses')
+			.then(response => response.json())
+			.then(data => {
+                document.getElementById('numberOfDoses').innerText = data;
+				console.log(data);
+			})
+			.catch(error => console.error('Error:', error));
+    };
+
+    function fetchTotalVaccinatedPeople() {
+        fetch('/VaccinationStats/GetTotalVaccinatedPeople')
+            .then(response => response.json())
+	        .then(data => {
+	            document.getElementById('numberOfVaccinated').innerText = data;
+	            console.log(data);
+		    })
+	        .catch(error => console.error('Error:', error));
+    };
+
+    function fetchTotalPopulationVaccinatedInPercentage() {
+        fetch('/VaccinationStats/GetTotalPopulationVaccinatedInPercent')
+            .then(response => response.json())
+            .then(data => {
+			    document.getElementById('percent-vaccinated').innerText = data + '%';
+			    console.log(data);
+		    })
+            .catch(error => console.error('Error:', error));
+    };
+
+</script>
+

@@ -1,0 +1,104 @@
+﻿@model DSU_Grupp3.Models.Viewmodels.NumberOfDosesViewModel
+
+
+<div>
+    <canvas id="numberOfDosesChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script type="text/javascript">
+
+</script>
+
+<script>
+    const numberOfDoses = document.getElementById('numberOfDosesChart').getContext('2d');
+
+    new Chart(numberOfDoses, {
+        type: 'bar',
+        data: {
+            labels: [
+    @foreach (var desoName in Model.NumberOfDoses)
+    {
+        @Html.Raw($"'{desoName}',")
+    }
+                    ],
+            datasets: [
+                {
+                    backgroundColor: ['rgba(255, 159, 64, 0.6)'],
+                    label: 'Antal som har tagit denna dos',
+                    data: [
+    @foreach (var vaccinatedPerDeso in Model.TotalDoses)
+    {
+        @Html.Raw($"'{vaccinatedPerDeso}',")
+    }
+                            ],
+                    borderWidth: 1
+                },
+                {
+
+                    label: 'Antal som har tagit upp till denna dos',
+                    data: [
+    @foreach (var desoPopulation in Model.TotalPersonDoses)
+    {
+        @Html.Raw($"'{desoPopulation}',")
+    }
+                            ],
+                    backgroundColor: '#BAF2D8',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    onHover: function (element) {
+                        element.native.target.style.cursor = 'pointer';
+                    },
+                    onLeave: function (element) {
+                        element.native.target.style.cursor = 'default';
+                    },
+                    labels: {
+                        font: {
+
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    display: true,
+                    beginAtZero: true,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            size: 13,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                },
+                x: {
+                    display: true,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            size: 13,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                }
+            }
+        }
+    });
+
+</script>

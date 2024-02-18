@@ -1,0 +1,435 @@
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: #EFEFEF;
+}
+
+.headline {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: black;
+    margin-left: 12%;
+}
+
+
+.sidebar {
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+    width: 15%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #BAD7F2;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.sidebar ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+    display: flex;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.4px; 
+}
+
+.sidebar ul li a:hover {
+    font-weight: bolder;
+}
+
+.sidebar ul li a.current-page {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+.sidebar h3 a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.logo {
+    margin-bottom: 40px;
+    font-size: 1.3vw;
+    text-align: center;
+}
+
+.general-stats {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15%;
+}
+
+.general-stats div {
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+    height: auto;
+    text-align: center;
+    margin-bottom: 45px;
+    width: 33%;
+    border-radius: 20px;
+    padding-top: 10px;
+}
+
+
+.general-stats h2 {
+    padding: 10px;
+    font-size: 19px;
+}
+
+.general-stats h1 {
+    padding-top: 5px;
+    padding-bottom: 30px;
+    font-size: 44px;
+    font-weight: 600;
+}
+
+.number-of-vaccinated {
+    background-color: #BAF2D8;
+    margin-right:25px
+}
+
+.percent-vaccinated {
+    background-color: #FFC2E0;
+}
+
+.number-of-doses {
+    background-color: #F2E2BA;
+    margin-left:25px;
+}
+
+#desoFilter {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: #E7F3FF;
+    border: solid 1px grey;
+    border-radius: 2.5px;
+    cursor: pointer;
+    width: 250px;
+    margin-right: 15px;
+}
+
+#desoFilter option {
+    border-bottom: solid 0.5px grey;
+    padding: 5px;
+}
+
+.deso-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-button {
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+    margin-bottom: 20px;
+    background-color: #BAD7F2;
+    border: solid 0.5px grey;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.reset-button {
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+    margin-bottom: 20px;
+    background-color: #BAD7F2;
+    border: solid 0.5px grey;
+    border-radius: 4px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#desoNames {
+    display: flex;
+    flex-direction: row;
+}
+
+#desoHeader {
+    margin-bottom: 20px;
+}
+
+.deso-diagram, .map-diagram {
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+    text-align: center;
+    background-color: #E7F3FF;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 15%;
+    margin-bottom:40px;
+}
+
+#click-text-deso {
+    font-size:20px;
+}
+
+#click-text-age {
+    font-size:18px;
+}
+
+
+#info-color{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#info-color p {
+    margin-top: 15px;
+    margin-right: 50px;
+    padding: 2px;
+    font-weight: 600;
+}
+
+.green, .yellow, .orange, .red{
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+    padding: 2px;
+    border: 0.5px solid grey;
+}
+
+.green {
+    background-color: #77DD77;
+}
+
+.yellow {
+    background-color: #FFF373;
+}
+
+.orange {
+    background-color: #FFAD50;
+}
+
+.red{
+background-color: #FF3434;
+}
+.syringe img {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    margin: 6px;
+}
+
+
+#info-deso-name {
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+#popup-info-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    display: none;
+    font-size: 20px;
+}
+
+#popup-info-box p{
+    margin: 7px;
+}
+
+#close-popup-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+#close-popup-button:hover{
+    background-color: lightgrey;
+}
+
+#popup-deso-name{
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+.deso-diagram h4 {
+    font-size: 20px;
+    text-align: start;
+    margin-bottom:0;
+}
+
+.deso-diagram p {
+    font-size:13px;
+    text-align:start;
+    margin-bottom:3px;
+}
+
+/*Age and gender view*/
+.age-and-gender {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-left: 15%;
+}
+
+.age-and-gender h2 {
+    font-size:19px;
+    text-align:center;
+}
+
+#btnReturn {
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+
+}
+
+.age-diagram {
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+    text-align: center;
+    width: 62%;
+    margin-right: 50px;
+    background-color: #E7F3FF;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.gender-diagram {
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+    width: 38%;
+    margin-left: 50px;
+    background-color: #E7F3FF;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+.comparative-diagram {
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+    text-align: center;
+    background-color: #E7F3FF;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 15%;
+}
+
+.comparative-diagram h2 {
+    font-size:19px;
+}
+
+/*Filter*/
+
+.filter-options {
+    margin-left: 12%;
+    padding: 10px;
+    margin-bottom: 35px;
+    background-color: #E7F3FF;
+    border: solid 0.5px grey;
+    border-radius:7px;
+    cursor: pointer;
+    height: 50px;
+    margin-top: 70px;
+}
+
+#batch-diagram, #vaccine-type-diagram, #vaccination-center-diagram, #dose-diagram, #progress-diagram {
+    box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.2);
+    height: auto;
+    text-align: center;
+    background-color: #E7F3FF;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 12%;
+}
+
+.dropdown-menus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#desoGraphFilter {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+    margin-bottom: 35px;
+    margin-top: 70px;
+    background-color: #E7F3FF;
+    border: solid 1px black;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 250px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.selectDeso-button {
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+    margin-top: 75px;
+    background-color: #BAD7F2;
+    border: solid 0.5px grey;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#desoGraphFilter option {
+    border-bottom: solid 0.5px;
+    padding: 5px;
+}
+
+/* Footer */
+.footer {
+    bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 15%;
+}

@@ -1,0 +1,85 @@
+﻿@model DSU_Grupp3.Models.Viewmodels.BatchViewModel
+
+<div>
+    <canvas id="batchChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+<script>
+    const batch = document.getElementById('batchChart').getContext('2d');
+
+    new Chart(batch, {
+        type: 'bar',
+        data: {
+
+            labels: [@foreach (var batch in Model.BatchNumber)
+    {
+        @Html.Raw($"'{batch}',")
+    }],
+            datasets: [{
+                label: 'Antalet vaccinerade',
+                data: [@foreach (var vaccinated in Model.TotalUses)
+    {
+
+        @Html.Raw($"'{vaccinated}',")
+    }],
+                borderWidth: 1,
+                backgroundColor: ['rgba(255, 159, 64, 0.6)']
+
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    onHover: function (element) {
+                        element.native.target.style.cursor = 'pointer';
+                    },
+                    onLeave: function (element) {
+                        element.native.target.style.cursor = 'default';
+                    },
+                    labels: {
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    display: true, 
+                    beginAtZero: true,
+                    grid: {
+                        display: false 
+                    },
+                    ticks: {
+                        font: {
+                            size: 13,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                },
+                x: {
+                    display: true, 
+                    grid: {
+                        display: false 
+                    },
+                    ticks: {
+                        font: {
+                            size: 13,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                }
+            }
+        }
+    });
+</script>

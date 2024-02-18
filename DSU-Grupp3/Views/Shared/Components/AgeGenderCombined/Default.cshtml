@@ -1,0 +1,125 @@
+﻿@model DSU_Grupp3.Models.Viewmodels.AgeGenderCombinedViewModel
+
+<script src="~/node_modules/chart.js/dist/Chart.min.js"></script>
+<div>
+    <canvas id="ageGenderCombinedChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+<script>
+    const ageGenderCombined = document.getElementById('ageGenderCombinedChart').getContext('2d');
+
+    new Chart(ageGenderCombined, {
+        type: 'bar',
+        data: {
+            labels: [
+    @foreach (var ageGroup in Model.VaccinatedByAgeAndGender)
+    {
+        @Html.Raw($"'{ageGroup.Key}',")
+    }
+                ],
+            datasets: [
+                {
+                    backgroundColor:'#7BBBF7',
+
+                    label: 'Vaccinerade män',
+                    data: [
+    @foreach (var men in Model.VaccinatedByAgeAndGender)
+    {
+        @Html.Raw($"'{men.Value["Male"]}',")
+    }
+                        ],
+                    borderWidth: 1
+                },
+                {
+                    backgroundColor:'#BAD7F2',
+                label: 'Totalt antal män',
+                data: [
+    @foreach (var men in Model.TotalPopulationByAgeAndGender)
+    {
+        @Html.Raw($"'{men.Value["Male"]}',")
+    }
+                            ],
+                borderWidth: 1
+                },
+                {
+                    
+                    label: 'Vaccinerade kvinnor',
+                    data: [
+    @foreach (var woman in Model.VaccinatedByAgeAndGender)
+    {
+        @Html.Raw($"'{woman.Value["Female"]}',")
+    }
+                        ],
+                    backgroundColor: '#FF7DBC',
+                    borderWidth: 1
+                },
+                {
+                    backgroundColor: '#FFC2E0',
+                    label: 'Totalt antal kvinnor',
+                    data: [
+    @foreach (var woman in Model.TotalPopulationByAgeAndGender)
+    {
+        @Html.Raw($"'{woman.Value["Female"]}',")
+    }
+                                ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            plugins:{
+                legend: {
+                    onHover: function (element) {
+                        element.native.target.style.cursor = 'pointer';
+                    },
+                    onLeave: function (element) {
+                        element.native.target.style.cursor = 'default';
+                    },
+                    labels: {
+                        font: {
+
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    display: true,
+                    beginAtZero: true,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            size: 13,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                },
+                x: {
+                    display: true,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            size: 13,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                }
+            }
+        }
+    });
+</script>

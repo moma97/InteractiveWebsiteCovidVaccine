@@ -1,0 +1,77 @@
+﻿@model DSU_Grupp3.Models.ByGenderViewModel;
+
+<script src="~/node_modules/chart.js/dist/Chart.min.js"></script>
+<div>
+    <canvas id="genderChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+<script>
+    const gender = document.getElementById('genderChart').getContext('2d');
+    
+    fetchGenderData();
+    new Chart(gender, {
+        type: 'doughnut',
+        data: {
+            labels: ['Procent av kvinnor vaccinerade @Model.FemalesProcentVac%', 'Procent av kvinnor som är ovaccinerade @Model.FemalesProcentUnVac%', 'Procent av män Vaccinerade @Model.MalesProcentVac%', 'Procent av Män som är ovaccinerade @Model.MalesProcentUnVac%'],
+            datasets: [{
+                label: 'Antal',
+                data: [@Model.FemalesVaccinated, @Model.UnVaccinatedFemales,0,0],
+                borderWidth: 1,
+                backgroundColor: [
+                    '#FF7DBC',
+                    '#FFC2E0',
+                    '#7BBBF7',
+                    '#BAD7F2'
+                    
+                ]
+            }, {
+               
+            }, {
+                label: 'Antal',
+                data: [0,0,@Model.MalesVaccinated, @Model.UnvaccinatedMales],
+                backgroundColor: [
+                    '#FF7DBC',
+                    '#FFC2E0',
+                    '#7BBBF7',
+                    '#BAD7F2'
+                ]
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    onHover: function (element) {
+                        element.native.target.style.cursor = 'pointer';
+                    },
+                    onLeave: function (element) {
+                        element.native.target.style.cursor = 'default';
+                    },
+                    align: 'start',
+                    labels: {
+                        font: {
+                            size: 11,
+                        },
+                        color: '#3b3b3b'
+                    }
+                }
+            },
+        }
+    });
+
+    function fetchGenderData() {
+        fetch('/ByGender/GetGenderData')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+    };
+
+
+</script>

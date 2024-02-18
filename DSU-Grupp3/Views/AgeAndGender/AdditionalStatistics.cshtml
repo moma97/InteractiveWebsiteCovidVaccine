@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Additional Statistics";
+}
+
+<div class="headline">
+    <h1>Vaccinationstatistik för ålder och kön</h1>
+</div>
+
+<div class="age-and-gender">
+    <div class="age-diagram">
+        <button id="btnReturn">Tillbaka</button>
+        <h2 class="ageheadline">Antal vaccinerade per åldersgrupp</h2>
+        <div> @await Component.InvokeAsync("AgeGroup")</div>
+        <h3 id="click-text-age">ⓘ Tryck på ett åldersspann för att se mer detaljerad statistik</h3>
+    </div>
+    <div class="gender-diagram">
+        <h2>Andel vaccinerade per kön</h2>
+        <div> @await Component.InvokeAsync("ByGender")</div>
+    </div>
+</div>
+<div class="comparative-diagram">
+    <h2>Antal vaccinerade per åldersgrupp och kön</h2>
+    <div> @await Component.InvokeAsync("AgeGenderCombined")</div>
+</div>

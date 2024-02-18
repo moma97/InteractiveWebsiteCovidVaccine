@@ -1,0 +1,167 @@
+﻿@model DSU_Grupp3.Models.Viewmodels.MapsViewModel
+
+<div id="map-container" style="position: relative;">
+    
+    <div id="info-deso-name"></div>
+
+    <div id="map" style="width: 100%; height: 800px; "></div>
+
+    <div id="popup-info-box">
+        <button id="close-popup-button" onclick="hidePopup()" >X</button>
+        <h2 id="popup-deso-name"></h2>
+        <b id="popup-deso-code"></b>
+        <p id="popup-total-population"></p>
+        <p id="popup-total-vaccinations"></p>
+        <p id="popup-female-vaccinated"></p>
+        <p id="popup-male-vaccinated"></p>
+    </div>
+
+    
+    <div id="info-color">
+        <div class="red"></div>
+        <p>0-25%</p>
+        <div class="orange"></div>
+        <p>25-50%</p>
+        <div class="yellow"></div>
+        <p>50-75%</p>
+        <div class="green"></div>
+        <p>75-100%</p>
+        <div class="syringe">
+            
+            <img src="~/syringe.png">
+            </div>
+            <p> Vaccinationscentral</p>
+    </div>
+</div>
+
+
+<script>
+
+    var desoDict = @Html.Raw(Json.Serialize(Model.DesosDict));
+    var desoCodesList = @Html.Raw(Json.Serialize(Model.DesoCode));
+    var desoTotalVaccinations = @Html.Raw(Json.Serialize(Model.TotalVaccinationsPerDeso));
+    var sites = @Html.Raw(Json.Serialize(Model.SitesList));
+
+    var map;
+
+
+    function initMap() {
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 63.17644192520907, lng: 14.635728347987076 }, // Initial location
+            zoom: 11, // Initial zoom level
+            disableDefaultUI: true,
+            zoomControl: true,
+            mapId: "1328f4a9138013ba"
+        });
+
+        map.data.loadGeoJson(
+            'deso.json',
+        );
+
+        map.data.setStyle(function (feature) {
+            var desoCode = feature.getProperty('deso');
+            var color = "blue";
+            var percentageVaccinated;
+
+            // Sets the colors for the map
+            for (var deso in desoDict) {
+                if (deso == desoCode) {
+                    percentageVaccinated = ((desoDict[deso].totalVaccinated / desoDict[deso].totalPopulation) * 100).toFixed(0);
+                    if (percentageVaccinated > 75) {
+                        color = "#77DD77";
+                    }
+                    else if (percentageVaccinated > 50) {
+                        color = "#FFF373";
+                    }
+                    else if (percentageVaccinated > 25) {
+                        color = "#FFAD50";
+                    }
+                    else {
+                        color = "#FF3434";
+                    }
+                }
+            }
+
+            return {
+                fillColor: color,
+                strokeWeight: 1,
+                fillOpacity: 0.7,
+            };
+        });
+
+
+        for (var site in sites) {
+            createMarker(sites[site]);
+        }
+
+        map.data.addListener('mouseover', function (event) {
+            document.getElementById('info-deso-name').textContent =
+                "DeSO kod: "+event.feature.getProperty('deso') + " | " + event.feature.getProperty('desoname');
+            map.data.overrideStyle(event.feature, { strokeWeight: 3});
+            map.data.overrideStyle(event.feature, { fillOpacity: 0.9 });
+        });
+        map.data.addListener('mouseout', function (event) {
+            map.data.revertStyle();
+        });
+        
+
+        // Controlls the popup window when a deso is clicked on the map
+        map.data.addListener('click', function (event) {
+            var desoCode = event.feature.getProperty('deso');
+            document.getElementById("popup-info-box").style.display = "block";
+            for (var deso in desoDict) { 
+                if (deso == desoCode) { 
+                    const totalPopulation = desoDict[deso].totalPopulation;
+                    const totalVaccinated = desoDict[deso].totalVaccinated;
+
+                    const femaleTotalPopulation = desoDict[deso].populationFemales;
+                    const femaleTotalVaccinated = desoDict[deso].vaccinatedFemales;
+
+                    const maleTotalPopulation = desoDict[deso].populationMales;
+                    const maleTotalVaccinated = desoDict[deso].vaccinatedMales;
+
+                    document.getElementById('popup-deso-name').textContent =  desoDict[deso].desoName;
+                    document.getElementById('popup-deso-code').textContent ="DeSO kod: " + desoDict[deso].deso;
+                    document.getElementById('popup-total-population').textContent = "Total population: " + totalPopulation;
+                    document.getElementById('popup-total-vaccinations').textContent = `Antal vaccinerade: ${totalVaccinated} (${percentOf(totalVaccinated, totalPopulation)}%)`;
+                    document.getElementById('popup-female-vaccinated').textContent = `Kvinnor vaccinerade: ${femaleTotalVaccinated} (${percentOf(femaleTotalVaccinated, femaleTotalPopulation)}%)`;
+                    document.getElementById('popup-male-vaccinated').textContent = `Män vaccinerade: ${maleTotalVaccinated} (${percentOf(maleTotalVaccinated, maleTotalPopulation)}%)`;
+                }
+            }
+
+        });
+    }
+
+    function hidePopup() {
+        document.getElementById("popup-info-box").style.display = "none";
+    }
+
+    function percentOf(part, whole) {
+        var percentage = (part / whole) * 100;
+        return percentage.toFixed(1);
+    }
+
+    function createMarker(site) {
+
+        var marker = new google.maps.Marker({
+            icon: {
+                url: 'syringe.png', 
+                scaledSize: new google.maps.Size(45, 45), 
+            },
+            position: { lat: site.latitude, lng: site.longitude },
+            map: map,
+        });
+
+        var infowindow = new google.maps.InfoWindow({
+            content: `<div style="font-size: 20px;">${site.name}</div>` 
+        });
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+    }
+    
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOX-FMSvYHr-YLoslB6mOR-F09zmgvG88&callback=initMap" async defer></script>

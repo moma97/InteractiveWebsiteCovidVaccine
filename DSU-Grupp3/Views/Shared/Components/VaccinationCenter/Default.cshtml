@@ -1,0 +1,103 @@
+﻿@model DSU_Grupp3.Models.Viewmodels.VaccinationCenterViewModel
+<div>
+    <canvas id="vaccinationCenterChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+
+<script>
+    const vaccinationCenter = document.getElementById('vaccinationCenterChart').getContext('2d');
+
+    new Chart(vaccinationCenter, {
+        type: 'bar',
+        data: {
+            labels: [
+    @foreach (var siteName in Model.SiteName)
+    {
+        @Html.Raw($"'{siteName}',")
+    }
+                    ],
+            datasets: [
+                {
+                    backgroundColor: ['rgba(153, 102, 255, 0.6)'],
+                    label: 'Total mängd doser',
+                    data: [
+    @foreach (var vaccinations in Model.Vaccinations)
+    {
+        @Html.Raw($"'{vaccinations}',")
+    }
+                            ],
+                    borderWidth: 1
+                },
+                {
+
+                    label: 'Antal unika patienter',
+                    data: [
+    @foreach (var uniqueVaccinations in Model.UniquePatients)
+    {
+        @Html.Raw($"'{uniqueVaccinations}',")
+    }
+                            ],
+                    backgroundColor: '#BAF2D8',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    onHover: function (element) {
+                        element.native.target.style.cursor = 'pointer';
+                    },
+                    onLeave: function (element) {
+                        element.native.target.style.cursor = 'default';
+                    },
+                    labels: {
+                        font: {
+
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    display: true,
+                    beginAtZero: true,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            size: 13,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                },
+                x: {
+                    display: true,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            size: 13,
+                            weight: 'bold'
+                        },
+                        color: '#3b3b3b'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+

@@ -1,0 +1,161 @@
+﻿@model DSU_Grupp3.Models.AgeGroupViewModel
+
+<div>
+    <canvas id="ageChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+<script>
+
+    var ageChartCanvas = document.getElementById('ageChart');
+    var ageChart;
+    var btnReturn = document.getElementById('btnReturn');
+    btnReturn.style.display = "none";
+
+  
+
+
+
+    function createAndUpdateChart() {
+        if (ageChart) {
+            ageChart.destroy();
+        }
+
+        var age = ageChartCanvas.getContext('2d');
+
+
+        ageChart = new Chart(age, {
+            type: 'bar',
+            data: {
+
+                labels: [@foreach (var ageGroup in Model.AllAgeGroups.Keys)
+    {
+        @Html.Raw($"'{ageGroup}',")
+    }],
+                datasets: [{
+                    label: 'Antalet vaccinerade',
+                    data: [@foreach (var vaccinated in Model.AllAgeGroups.Values)
+    {
+
+        @Html.Raw($"'{vaccinated}',")
+    }],
+                    borderWidth: 1,
+                    backgroundColor: ['#82F3BE']
+
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            color: '#3b3b3b'
+                        },
+                        onHover: function (element) {
+                            element.native.target.style.cursor = 'pointer';
+                        },
+                        onLeave: function (element) {
+                            element.native.target.style.cursor = 'default';
+                        }
+                    }
+                },
+                onHover: (event, chartElements) => {             
+                    const target = event.native.target;             
+                    if (chartElements.length > 0) {           
+                        target.style.cursor = 'pointer';             
+                    } 
+                    else {                 
+                        target.style.cursor = 'default';             
+                    }         
+                },
+                scales: {
+                    y: {
+                        display: true, 
+                        beginAtZero: true,
+                        grid: {
+                            display: false 
+                        },
+                        ticks: {
+                            font: {
+                                size: 13,
+                                weight: 'bold'
+                            },
+                            color: '#3b3b3b'
+                        }
+                    },
+                    x: {
+                        display: true, 
+                        grid: {
+                            display: false 
+                        },
+                        title: {
+                            display: true,
+                            color: '#000000',
+                            font: {
+                                size: 14,
+                            },
+                            padding: { top: 20, left: 0, right: 0, bottom: 0 }
+                        },
+                        ticks: {
+                            font: {
+                                size: 13,
+                                weight: 'bold'
+                            },
+                            color: '#3b3b3b'
+                        }
+                    }
+                },
+                onClick: function (event, elements) {
+                    
+                        var newLabels = this.data.labels[elements[0].index];
+                    var ageRange;
+                    
+                var newData = [@foreach (var values in Model.Agegroups.Values
+                            )
+                        @Html.Raw($"'{values}',")
+                        ]
+
+                       if (newLabels.includes("+"))
+                       {
+                           ageRange = [parseInt(newLabels),84];
+                       }
+                       else
+                       {
+                          ageRange = newLabels.split('-').map(Number);
+                       }
+                        newData = newData.slice(ageRange[0]-20,ageRange[1]-20+1);
+                        var newLabelsArray = Array.from({ length: ageRange[1] - ageRange[0] + 1 }, (_, i) => ageRange[0] + i); 
+                        this.data.datasets[0].data = newData;
+                        this.data.labels = newLabelsArray;
+
+                        this.update();
+                        btnReturn.style.display = 'block';
+                    var textAge = document.getElementById('click-text-age');
+                    textAge.style.display = 'none';
+
+                },
+            }
+        });
+    }
+
+    document.getElementById('btnReturn').addEventListener('click', function () {
+
+        createAndUpdateChart();
+        btnReturn.style.display = "none";
+        var textAge = document.getElementById('click-text-age');
+        textAge.style.display = 'block';
+    });
+
+    createAndUpdateChart();
+    
+</script>
+

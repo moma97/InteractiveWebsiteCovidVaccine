@@ -1,0 +1,99 @@
+﻿@model DSU_Grupp3.Models.Viewmodels.VaccineProgressViewModel
+
+@{
+    ViewData["Title"] = "Detail Statistics";
+}
+
+<div class="headline">
+    <h1>Vaccinationsstatistik utifrån parametrar</h1>
+</div>
+
+
+<div class="dropdown-menus">
+    <select class="filter-options" id="filter-options">
+        <option value="batchNumber">Batch-nummer</option>
+        <option value="vaccineType">Typ av vaccin</option>
+        <option value="vaccinationCenter">Vaccinationscentral</option>
+        <option value="doseCount">Antal doser</option>
+        <option value="vaccineProgress">Vaccinationsgrad</option>
+    </select>
+
+    <div id="desoNames" class="desoNamesFilterPage" style="visibility: collapse">
+        <select id="desoGraphFilter">
+            @foreach(var deso in Model.SelectedDeso)
+            {
+                <option value="@deso.Value">@deso.Key</option>
+            }
+        </select>
+        <button class="selectDeso-button" onclick="GetDataForDeso()">Välj DeSO</button>
+
+    </div>
+</div>
+
+
+
+
+<div id="batch-diagram">
+    <h2>Vaccinationsgrad per batch</h2>
+    <div> @await Component.InvokeAsync("Batch")</div>
+</div>
+
+<div id="vaccine-type-diagram" style="display: none;">
+    <h2>Antal vaccinerade per vaccin</h2>
+    <div> @await Component.InvokeAsync("VaccineType")</div>
+</div>
+
+<div id="vaccination-center-diagram" style="display: none;">
+    <h2>Antal vaccinerade per vaccinationscentral</h2>
+    <div> @await Component.InvokeAsync("VaccinationCenter")</div>
+</div>
+
+<div id="dose-diagram" style="display: none;">
+    <h2>Antal vaccinerade per dos</h2>
+    <div> @await Component.InvokeAsync("NumberOfDoses")</div>
+</div>
+
+<div id="progress-diagram" style="display: none;">
+    <h2>Andel vaccinerade i Östersunds kommun per månad</h2>
+    <div> @await Component.InvokeAsync("VaccineProgress")</div>
+    
+</div>
+
+
+
+<script>
+
+
+    document.getElementById('filter-options').addEventListener('change', function () {
+
+        document.getElementById('batch-diagram').style.display = 'none';
+        document.getElementById('vaccine-type-diagram').style.display = 'none';
+        document.getElementById('vaccination-center-diagram').style.display = 'none';
+        document.getElementById('dose-diagram').style.display = 'none';
+        document.getElementById('progress-diagram').style.display = 'none';
+
+        document.getElementById('desoNames').style.visibility = 'collapse';
+        
+
+        var selectedOption = this.value;
+        switch (selectedOption) {
+
+            case 'batchNumber':
+                document.getElementById('batch-diagram').style.display = 'block';
+                break;
+            case 'vaccineType':
+                document.getElementById('vaccine-type-diagram').style.display = 'block';
+                break;
+            case 'vaccinationCenter':
+                document.getElementById('vaccination-center-diagram').style.display = 'block';
+                break;
+            case 'doseCount':
+                document.getElementById('dose-diagram').style.display = 'block';
+                break;
+            case 'vaccineProgress':
+                document.getElementById('progress-diagram').style.display = 'block';
+                document.getElementById('desoNames').style.visibility = 'visible';
+                break;
+        }
+    });
+</script>
