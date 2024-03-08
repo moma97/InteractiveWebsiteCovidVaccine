@@ -9,7 +9,13 @@ Detta projekt är utvecklat för att visa vaccinationsgraden i Östersund. Det t
 - Möjlighet att filtrera data efter DeSo
 - Visa en heatmap för att se vaccinationsgraden över olika områden i Östersund.
 
-  ## Screenshots
+  ## Förhandsgranskning
+
+
+https://github.com/moma97/InteractiveWebsiteCovidVaccine/assets/117289081/8a97b5e3-75d4-4aff-a7e9-2310e4bff2c9
+
+
+  
 ![image](https://github.com/systemvetenskap/dsu24-grupp3/assets/116811908/668a7168-6f53-4217-b76a-a09442ff8458)
 
 
